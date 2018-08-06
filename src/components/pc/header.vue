@@ -147,7 +147,7 @@
   .animenu__nav {
     text-align: left;
     height: 95px;
-    line-height: 95px;
+    line-height: 95px !important;
   }
 
   .animenu__nav>li {
@@ -239,7 +239,8 @@
       display: none
     }
     .animenu__nav {
-      margin: 10px 0
+      margin: 10px 0;
+      line-height: normal !important;
     }
     .animenu__nav>li {
       width: 100%;
