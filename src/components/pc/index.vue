@@ -1,18 +1,24 @@
 <template>
   <el-container>
-    <el-header style="height: 95px;line-height: 95px">
+    <el-header class="headerHeight">
       <Header></Header>
     </el-header>
-    <el-main>Main</el-main>
-    <el-footer>Footer</el-footer>
+    <el-main>
+      <router-view></router-view>
+    </el-main>
+    <el-footer class="footerHeight">
+      <Footer></Footer>
+    </el-footer>
   </el-container>
 </template>
 
 <script>
   import Header from './header'
+  import Footer from './footer'
     export default {
         components: {
-          Header
+          Header,
+          Footer
         },
         props: {},
         data() {

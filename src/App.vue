@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bodybackground">
     <component v-bind:is="currentView"></component>
   </div>
 </template>

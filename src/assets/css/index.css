@@ -1,3 +1,94 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+body{
+  color: #fff;
+  background: #131313;
+  height: 100vh;
+}
+.bodywidth{
+  max-width: 1170px;
+  margin: 0 auto !important;
+}
+/*.dark_2{*/
+  /*background: #131313;*/
+  /*min-height: 100vh;*/
+/*}*/
+.headerHeight{
+  height: 95px !important;
+  line-height: 95px;
+}
+.footerHeight{
+  height: 160px !important;
+  /*padding: 30px 30px 0 30px;*/
+}
+.footerContentHeight{
+  height: 100%;
+}
+.footerIcon li{
+  display: inline-block;
+  margin: 0 5px;
+}
+.footerFlexCenter{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.footerpadding{
+  padding: 30px 0;
+}
 .pc_header{
-  background: rebeccapurple;
+  background: #262636;
+  padding: 0 30px;
+}
+.pc_footer{
+  background: #262636;
+}
+.pc_footer .el-button--text{
+  color: #fff !important;
+}
+
+/*交易所*/
+/*背景色*/
+.basic-trade-1, .basic-trade-volumes {
+  height: 111px;
+  padding: 11px 20px;
+  overflow: hidden;
+}
+.basic-trade-volumes,.basic-trade-1{
+  margin-top: 7px;
+  background: rgb(28, 28, 28);
+  border-radius: 4px;
+}
+.basic-trade-volumes{
+  height: auto;
+  padding: 11px 20px;
+}
+.basic-trade-1_ul{
+  padding-bottom: 7px;
+}
+.basic-trade-1_ul li{
+  margin-bottom: 7px;
+}
+.basic-trade-1_ul li:first-child{
+  margin-top: 8px;
+  padding-bottom: 7px;
+}
+.basic-trade-1_title{
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.3);
+}
+.basic-trade-1_1{
+  font-size: 16px;
+  font-weight: 600;
+}
+.basic-trade-2{
+  width: 776px;
+  height: 465px;
 }

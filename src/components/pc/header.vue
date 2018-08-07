@@ -1,5 +1,5 @@
 <template>
-  <el-row class="pc_header">
+  <el-row class="bodywidth pc_header">
     <el-col :xs="4" :sm="4" :md="4" :lg="4" :xl="4">LOGO</el-col>
     <el-col :xs="20" :sm="20" :md="20" :lg="20" :xl="20">
       <nav class="animenu" role="navigation" aria-label="Menu">
@@ -10,15 +10,33 @@
         </button>
 
         <ul class="animenu__nav">
-          <li><a href="#">Home</a></li>
           <li>
-            <a href="#">Archive</a>
+            <router-link tag="a" to="/BasicTrade">Basic trade</router-link>
           </li>
           <li>
-            <a href="#">Categories</a>
+            <router-link tag="a" to="/BasicTrade">Advanced trade</router-link>
           </li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li>
+            <router-link tag="a" to="/BasicTrade">Support</router-link>
+          </li>
+          <li>
+            <router-link tag="a" to="/BasicTrade">Trading tutorial</router-link>
+          </li>
+          <li>
+            <router-link tag="a" to="/BasicTrade">News</router-link>
+          </li>
+          <li>
+            <router-link tag="a" to="/BasicTrade">F.A.Q</router-link>
+          </li>
+          <li>
+            <router-link tag="a" to="/BasicTrade">Coinilb</router-link>
+          </li>
+          <li>
+            <router-link tag="a" to="/BasicTrade">Sign in</router-link>
+          </li>
+          <li>
+            <router-link tag="a" to="/BasicTrade">Sign up</router-link>
+          </li>
         </ul>
       </nav>
     </el-col>
@@ -148,6 +166,8 @@
     text-align: left;
     height: 95px;
     line-height: 95px !important;
+    display: flex;
+    justify-content: space-around;
   }
 
   .animenu__nav>li {
@@ -156,8 +176,8 @@
   }
 
   .animenu__nav>li>a {
-    padding: 0 30px;
-    text-transform: uppercase
+    /*padding: 0 30px;*/
+    /*text-transform: uppercase*/
   }
 
   .animenu__nav>li:hover>ul,
@@ -241,6 +261,7 @@
     .animenu__nav {
       margin: 10px 0;
       line-height: normal !important;
+      display: none !important;
     }
     .animenu__nav>li {
       width: 100%;
