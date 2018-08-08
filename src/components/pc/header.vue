@@ -37,6 +37,21 @@
           <li>
             <router-link tag="a" to="/BasicTrade">Sign up</router-link>
           </li>
+          <li>
+            <div class="language_img"></div>
+            <el-popover
+              placement="bottom"
+              width="80"
+              trigger="click">
+              <ul class="language_list">
+                <li><div class="language_img_cn"></div><span>CN</span></li>
+                <li><div class="language_img_ko"></div><span>KO</span></li>
+                <li><div class="language_img_ja"></div><span>JA</span></li>
+                <li><div class="language_img_en"></div><span>EN</span></li>
+              </ul>
+              <el-button type="text" slot="reference">EN</el-button>
+            </el-popover>
+          </li>
         </ul>
       </nav>
     </el-col>
@@ -44,48 +59,49 @@
 </template>
 
 <script>
-    function init() {
-      var animenuToggle = document.querySelector('.animenu__toggle'),
-        animenuNav    = document.querySelector('.animenu__nav'),
-        hasClass = function( elem, className ) {
-          return new RegExp( ' ' + className + ' ' ).test( ' ' + elem.className + ' ' );
-        },
-        toggleClass = function( elem, className ) {
-          var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ' ) + ' ';
-          if( hasClass(elem, className ) ) {
-            while( newClass.indexOf( ' ' + className + ' ' ) >= 0 ) {
-              newClass = newClass.replace( ' ' + className + ' ' , ' ' );
-            }
-            elem.className = newClass.replace( /^\s+|\s+$/g, '' );
-          } else {
-            elem.className += ' ' + className;
+  function init() {
+    var animenuToggle = document.querySelector('.animenu__toggle'),
+      animenuNav = document.querySelector('.animenu__nav'),
+      hasClass = function (elem, className) {
+        return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+      },
+      toggleClass = function (elem, className) {
+        var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+        if (hasClass(elem, className)) {
+          while (newClass.indexOf(' ' + className + ' ') >= 0) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
           }
-        },
-        animenuToggleNav =  function (){
-          toggleClass(animenuToggle, "animenu__toggle--active");
-          toggleClass(animenuNav, "animenu__nav--open");
+          elem.className = newClass.replace(/^\s+|\s+$/g, '');
+        } else {
+          elem.className += ' ' + className;
         }
+      },
+      animenuToggleNav = function () {
+        toggleClass(animenuToggle, "animenu__toggle--active");
+        toggleClass(animenuNav, "animenu__nav--open");
+      }
 
-      if (!animenuToggle.addEventListener) {
-        animenuToggle.attachEvent("onclick", animenuToggleNav);
-      }
-      else {
-        animenuToggle.addEventListener('click', animenuToggleNav);
-      }
+    if (!animenuToggle.addEventListener) {
+      animenuToggle.attachEvent("onclick", animenuToggleNav);
     }
-    export default {
-        components: {},
-        props: {},
-        data() {
-            return {}
-        },
-        watch: {},
-        computed: {},
-        methods: {},
-        created() {
-        },
-        mounted: init
+    else {
+      animenuToggle.addEventListener('click', animenuToggleNav);
     }
+  }
+
+  export default {
+    components: {},
+    props: {},
+    data() {
+      return {}
+    },
+    watch: {},
+    computed: {},
+    methods: {},
+    created() {
+    },
+    mounted: init
+  }
 </script>
 
 <style scoped>
@@ -117,7 +133,7 @@
     transition: 0.15s cubic-bezier(0.75, -0.55, 0.25, 1.55)
   }
 
-  .animenu__toggle__bar+.animenu__toggle__bar {
+  .animenu__toggle__bar + .animenu__toggle__bar {
     margin-top: 4px
   }
 
@@ -170,37 +186,37 @@
     justify-content: space-around;
   }
 
-  .animenu__nav>li {
+  .animenu__nav > li {
     position: relative;
     /*border-right: 1px solid #444*/
   }
 
-  .animenu__nav>li>a {
+  .animenu__nav > li > a {
     /*padding: 0 30px;*/
     /*text-transform: uppercase*/
   }
 
-  .animenu__nav>li:hover>ul,
-  .animenu__nav>li:focus-within>ul {
+  .animenu__nav > li:hover > ul,
+  .animenu__nav > li:focus-within > ul {
     opacity: 1;
     visibility: visible;
     margin: 0
   }
 
-  .animenu__nav>li:hover>a,
-  .animenu__nav>li:focus-within>a {
+  .animenu__nav > li:hover > a,
+  .animenu__nav > li:focus-within > a {
     color: #fff
   }
 
   /*.animenu__nav__hasDropdown:before {*/
-    /*content: "";*/
-    /*position: absolute;*/
-    /*border: 4px solid transparent;*/
-    /*border-bottom: 0;*/
-    /*border-top-color: currentColor;*/
-    /*top: 50%;*/
-    /*margin-top: -2px;*/
-    /*right: 10px*/
+  /*content: "";*/
+  /*position: absolute;*/
+  /*border: 4px solid transparent;*/
+  /*border-bottom: 0;*/
+  /*border-top-color: currentColor;*/
+  /*top: 50%;*/
+  /*margin-top: -2px;*/
+  /*right: 10px*/
   /*}*/
 
   .animenu__nav__dropdown {
@@ -216,12 +232,12 @@
     transition: margin .15s, opacity .15s
   }
 
-  .animenu__nav__dropdown>li {
+  .animenu__nav__dropdown > li {
     width: 100%;
     border-bottom: 1px solid #515151
   }
 
-  .animenu__nav__dropdown>li:first-child>a:after {
+  .animenu__nav__dropdown > li:first-child > a:after {
     content: '';
     position: absolute;
     height: 0;
@@ -233,7 +249,7 @@
     border-bottom-color: inherit
   }
 
-  .animenu__nav__dropdown>li:last-child {
+  .animenu__nav__dropdown > li:last-child {
     border: 0
   }
 
@@ -254,24 +270,29 @@
     .animenu__toggle {
       display: inline-block
     }
+
     .animenu__nav,
     .animenu__nav__dropdown {
       display: none
     }
+
     .animenu__nav {
       margin: 10px 0;
       line-height: normal !important;
       display: none !important;
     }
-    .animenu__nav>li {
+
+    .animenu__nav > li {
       width: 100%;
       border-right: 0;
       border-bottom: 1px solid #515151
     }
-    .animenu__nav>li:last-child {
+
+    .animenu__nav > li:last-child {
       border: 0
     }
-    .animenu__nav>li:first-child>a:after {
+
+    .animenu__nav > li:first-child > a:after {
       content: '';
       position: absolute;
       height: 0;
@@ -282,17 +303,20 @@
       border-top: 0;
       border-bottom-color: inherit
     }
-    .animenu__nav>li>a {
+
+    .animenu__nav > li > a {
       width: 100%;
       padding: 10px;
       border-color: #111;
       position: relative
     }
+
     .animenu__nav a:hover {
       background-color: #0186ba;
       border-color: #0186ba;
       color: #fff
     }
+
     .animenu__nav__dropdown {
       position: static;
       background-color: #373737;
@@ -301,9 +325,11 @@
       visibility: visible;
       opacity: 1
     }
-    .animenu__nav__dropdown>li:first-child>a:after {
+
+    .animenu__nav__dropdown > li:first-child > a:after {
       content: none
     }
+
     .animenu__nav__dropdown a {
       padding-left: 20px;
       width: 100%

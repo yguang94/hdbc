@@ -43,6 +43,59 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
   height: 95px !important;
   line-height: 95px;
 }
+.language_img{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-image: url('../images/en.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: -10px 0;
+}
+.language_img_cn{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-image: url('../images/cn.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: -10px 0;
+}
+.language_img_ko{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-image: url('../images/ko.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: -10px 0;
+}
+.language_img_ja{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-image: url('../images/ja.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: -10px 0;
+}
+.language_img_en{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-image: url('../images/en.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: -10px 0;
+}
+.language_list span{
+  float: right;
+}
+
+
+
+
+
 .footerHeight{
   height: 160px !important;
   /*padding: 30px 30px 0 30px;*/
