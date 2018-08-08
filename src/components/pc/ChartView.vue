@@ -2,7 +2,7 @@
     <div>
       <!-- TradingView Widget BEGIN -->
       <div class="tradingview-widget-container">
-        <div id="tradingview_93af6"></div>
+        <div id="technical-analysis"></div>
         <div class="tradingview-widget-copyright"><a href="https://cn.tradingview.com/symbols/COINBASE-BTCUSD/" rel="noopener" target="_blank"><span class="blue-text">BTCUSD图表</span></a>由TradingView提供</div>
       </div>
       <!-- TradingView Widget END -->
@@ -32,7 +32,7 @@
           "enable_publishing": false,
           "hide_top_toolbar": true,
           "allow_symbol_change": true,
-          "container_id": "tradingview_93af6"
+          "container_id": "technical-analysis"
         }
       );
 
