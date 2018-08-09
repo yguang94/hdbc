@@ -37,8 +37,10 @@
                       style="width: 100%">
                       <el-table-column
                         width="65"
-                        prop="Coin"
                         label="Coin">
+                        <template slot-scope="scope">
+                          <el-button type="text">Coin</el-button>
+                        </template>
                       </el-table-column>
                       <el-table-column
                         width="95"
@@ -67,6 +69,9 @@
                         width="65"
                         prop="Coin"
                         label="Coin">
+                        <template slot-scope="scope">
+                          <el-button type="text">{{scope.row.Coin}}</el-button>
+                        </template>
                       </el-table-column>
                       <el-table-column
                         width="95"
@@ -419,6 +424,7 @@
     created() {
     },
     mounted() {
+      document.getElementsByTagName("header")[0].className+="BasicTrade_header";
     }
   }
 </script>

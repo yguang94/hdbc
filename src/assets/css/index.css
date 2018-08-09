@@ -17,16 +17,16 @@ body{
   font-style: normal;
   min-width: 1170px;
 }
-body::-webkit-scrollbar {/*滚动条整体样式*/
+*::-webkit-scrollbar {/*滚动条整体样式*/
   width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
   height: 4px;
 }
-body::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+*::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
   border-radius: 5px;
   -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
   background: rgba(0,0,0,0.2);
 }
-body::-webkit-scrollbar-track {/*滚动条里面轨道*/
+*::-webkit-scrollbar-track {/*滚动条里面轨道*/
   -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
   border-radius: 0;
   background: rgba(0,0,0,0.1);
@@ -34,6 +34,9 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 .bodywidth{
   max-width: 1170px;
   margin: 0 auto !important;
+}
+.el-main{
+  padding: 0 !important;
 }
 /*.dark_2{*/
   /*background: #131313;*/
@@ -91,7 +94,27 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 .language_list span{
   float: right;
 }
-
+.el-menu--horizontal{
+  border-bottom: none;
+}
+.el-menu--horizontal > .el-menu-item, .el-menu--horizontal > .el-menu-item.is-active{
+  border-bottom: none;
+}
+.el-menu--horizontal > .el-menu-item, .el-menu--horizontal > .el-submenu .el-submenu__title{
+  height: 95px;
+  line-height: 95px;
+  color: rgb(255, 255, 255);
+}
+.el-menu--horizontal .el-menu-item:not(.is-disabled):focus, .el-menu--horizontal > .el-menu-item.is-active{
+  color: #fff;
+}
+.header_user .el-menu{
+  float: right;
+}
+.header_menu .el-menu{
+  display: flex;
+  justify-content: space-around;
+}
 
 
 
@@ -116,8 +139,9 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
   padding: 30px 0;
 }
 .pc_header{
-  background: rgb(28, 28, 28);
+  background: transparent;
   padding: 0 30px;
+  z-index: 9999;
 }
 .pc_footer{
   background: transparent;
@@ -128,6 +152,9 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 
 /*交易所*/
 /*背景色*/
+.BasicTrade_header{
+  background: #000;
+}
 .basic-trade-1, .basic-trade-volumes, .basic-trade-all-pairs {
   height: 111px;
   padding: 11px 20px;
@@ -186,20 +213,6 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
   height: 475px;
   overflow: auto;
 }
-.tabsTable::-webkit-scrollbar {/*滚动条整体样式*/
-  width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
-  height: 4px;
-}
-.tabsTable::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
-  border-radius: 5px;
-  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-  background: rgba(0,0,0,0.2);
-}
-.tabsTable::-webkit-scrollbar-track {/*滚动条里面轨道*/
-  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-  border-radius: 0;
-  background: rgba(0,0,0,0.1);
-}
 .tabsTable .el-table .cell{
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -256,4 +269,58 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 .basic-trade-history_table{
   height: 225px;
   overflow: auto;
+}
+.basic-trade-all-pairs_tabs .el-button--text{
+  color: #606266;
+}
+
+
+.home{
+  background: #fff;
+  color: black;
+}
+.home_header{
+  background: #241e56;
+}
+.canvas{
+  position: absolute;
+  top: 5px;
+}
+.main-greeting-wrapper{
+  height: 420px;
+  background: #0f0746e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.main-greeting-wrapper .el-row{
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.main-greeting-wrapper_txt1, .main-greeting-wrapper_txt2{
+  text-align: center;
+}
+.main-greeting-wrapper_txt1 span{
+  font-size: 74px;
+  font-weight: 700;
+  font-family: inherit;
+}
+.main-greeting-wrapper_txt2 span{
+  font-size: 28px
+}
+
+.begin-traiding{
+  max-width: 1170px;
+  margin: 0 auto;
+  height: 500px;
+  padding: 60px 0 84px;
+}
+.begin-traiding .el-col-24 h3, .begin-traiding .el-col-24 span{
+  display: block;
+  text-align: center;
+}
+.begin-traiding .el-col-24 h3{
+  font-size: 24px;
+  font-weight: 700;
 }
