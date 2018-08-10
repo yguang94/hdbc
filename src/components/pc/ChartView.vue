@@ -10,13 +10,7 @@
 </template>
 
 <script>
-    function init() {
-      let script = document.createElement('script')
-      script.type = 'text/javascript'
-      script.src = 'https://s3.tradingview.com/tv.js'
-      document.head.appendChild(script)
-      loadTradingView()
-    }
+
     function loadTradingView() {
       new TradingView.widget(
         {
@@ -48,9 +42,7 @@
         watch: {},
         computed: {},
         methods: {},
-        created() {
-        },
-        mounted:init
+        mounted:loadTradingView
     }
 </script>
 

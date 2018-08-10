@@ -2,7 +2,11 @@
   <div class="footerContentHeight bodywidth pc_footer">
     <el-row :gutter="10" class="footerpadding">
       <el-col :xs="0" :sm="6" :md="6" :lg="6" :xl="6">
-        <div style="text-align: center;padding: 12px 0">logo</div>
+        <div style="text-align: center;padding: 12px 0">
+          <router-link tag="a" to="/">
+            <img src="../../assets/images/logo.svg" alt="">
+          </router-link>
+        </div>
       </el-col>
       <el-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
         <ul>

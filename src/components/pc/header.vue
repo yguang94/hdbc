@@ -1,6 +1,10 @@
 <template>
   <el-row class="bodywidth pc_header">
-    <el-col :span="4">LOGO</el-col>
+    <el-col :span="4">
+      <router-link tag="a" to="/">
+        <img src="../../assets/images/logo.svg" alt="">
+      </router-link>
+    </el-col>
     <el-col :span="13" class="header_menu">
       <el-menu class="el-menu-demo" mode="horizontal" background-color="transparent">
         <el-menu-item index="1"><router-link tag="div" to="/BasicTrade">Basic trade</router-link></el-menu-item>

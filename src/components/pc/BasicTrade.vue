@@ -421,10 +421,8 @@
     watch: {},
     computed: {},
     methods: {},
-    created() {
-    },
+    created() {},
     mounted() {
-      document.getElementsByTagName("header")[0].className+="BasicTrade_header";
     }
   }
 </script>
