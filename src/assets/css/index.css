@@ -123,6 +123,9 @@ body{
   height: 160px !important;
   /*padding: 30px 30px 0 30px;*/
 }
+.el-footer{
+  background: transparent;
+}
 .footerContentHeight{
   height: 100%;
 }
