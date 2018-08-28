@@ -18,7 +18,8 @@
   export default {
     data: function() {
       return {
-        currentView: ""
+        // currentView: ""
+        currentView: "Index"
       };
     },
     components: {
@@ -29,14 +30,14 @@
       _isMobile
     },
     mounted() {
-      let that = this
-      if (that._isMobile()) {
-        alert("手机端");
-        that.currentView = "MobIndex";
-      } else {
-        alert("pc端");
-        that.currentView = "Index";
-      }
+      // let that = this
+      // if (that._isMobile()) {
+      //   alert("手机端");
+      //   that.currentView = "MobIndex";
+      // } else {
+      //   alert("pc端");
+      //   that.currentView = "Index";
+      // }
     }
   }
 </script>

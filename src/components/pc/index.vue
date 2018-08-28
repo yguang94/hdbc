@@ -6,15 +6,12 @@
     <el-main>
       <router-view></router-view>
     </el-main>
-    <el-footer class="footerHeight">
-      <Footer></Footer>
-    </el-footer>
   </el-container>
 </template>
 
 <script>
-  import Header from './header'
-  import Footer from './footer'
+  import Header from './comm/header'
+  import Footer from './comm/footer'
     export default {
         components: {
           Header,
