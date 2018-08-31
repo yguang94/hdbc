@@ -1265,4 +1265,8 @@ p {
     .Report .el-form-item{
         margin-bottom: 10px;
     }
+    .login_content .el-card, .reset_content .el-card, .register_content .el-card{
+        width: 95%;
+        padding: 10px 0;
+    }
 }

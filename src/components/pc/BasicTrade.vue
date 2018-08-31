@@ -13,7 +13,7 @@
                 </el-row>
             </div>
             <div class="basic-trade-top">
-                <el-row :gutter="10" style="display: flex">
+                <el-row :gutter="10">
                     <el-col :xs="24" :sm="8" :md="8" :lg="8" style="flex: 1;display: flex">
                         <div class="basic-trade-all-pairs">
                             <div class="basic-trade-all-pairs_header">
@@ -253,14 +253,15 @@
                             <el-row>
                                 <el-col :span="24">
                                     <ChartView></ChartView>
+                                    <Xchart :id="id"></Xchart>
                                 </el-col>
                             </el-row>
                         </div>
                     </el-col>
                 </el-row>
             </div>
-            <div class="basic-trade-login" v-if="state == 1">
-                <el-row :gutter="10" style="display: flex">
+            <div class="basic-trade-login" v-if="state === 1">
+                <el-row :gutter="10">
                     <el-col :xs="24" :sm="8" :md="8" :lg="8" style="flex: 1;display: flex">
                         <div class="basic-trade-my" style="width: 100%">
                             <el-card class="box-card">
@@ -483,10 +484,14 @@
     import Footer from './comm/footer'
     import ChartView from './comm/ChartView'
 
+    import Xchart from './comm/chart'
+
+
     export default {
         components: {
             ChartView,
-            Footer
+            Footer,
+            Xchart
         },
         props: {},
         data() {
@@ -535,7 +540,8 @@
                         Change: '-9.0909',
                         Volume: '520.98114929'
                     }
-                ]
+                ],
+                id: 'myChart',
             }
         },
         watch: {},
@@ -545,11 +551,9 @@
         created() {
         },
         mounted() {
-
         }
     }
 </script>
-
-<style scoped>
+<style>
 
 </style>

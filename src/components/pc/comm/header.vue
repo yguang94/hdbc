@@ -73,8 +73,8 @@
                         <i class="el-icon-menu"></i>
                     </span>
                     <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item v-if="state ==0 ">Sign in</el-dropdown-item>
-                        <el-dropdown-item v-if="state ==0 ">Sign up</el-dropdown-item>
+                        <el-dropdown-item v-if="state ==0 "><router-link tag="div" to="/Login">Sign in</router-link></el-dropdown-item>
+                        <el-dropdown-item v-if="state ==0 "><router-link tag="div" to="/Register">Sign up</router-link></el-dropdown-item>
                         <el-dropdown-item v-if="state ==1 ">yguang94@126.com</el-dropdown-item>
                         <el-dropdown-item divided disabled>
                             <div class="language_img_en"></div>
@@ -108,7 +108,7 @@
         props: {},
         data() {
             return {
-                state: 1
+                state: 0
             }
         },
         watch: {},

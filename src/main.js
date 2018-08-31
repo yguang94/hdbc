@@ -6,9 +6,13 @@ import router from './router'
 import '../theme/index.css'
 import ElementUi from 'element-ui'
 import './assets/css/index.css'
+import axios from 'axios'
+import echarts from 'echarts'
 
 Vue.use(ElementUi)
 Vue.config.productionTip = false
+Vue.prototype.$axios = axios
+Vue.prototype.$echarts = echarts
 
 /* eslint-disable no-new */
 new Vue({

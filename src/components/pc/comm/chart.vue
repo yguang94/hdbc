@@ -1,7 +1,9 @@
 <template>
     <div id="main">
-        <button>我是按钮</button>
-        <div id='myChart' ref="myChart"></div>
+        <div :id='id'
+             ref="myChart"
+        >
+        </div>
     </div>
 </template>
 <script>
@@ -9,23 +11,25 @@
 
     export default {
         name: 'echarts',
-        data () {
+        data() {
             return {
                 resData: '',
                 echartsOption: {
-                    title: {
-                        text: '上证指数',
-                        left: 0
-                    },
+                    title: {},
+                    backgroundColor: '#1c1c1c',
                     tooltip: {
                         trigger: 'axis',
                         axisPointer: {
-                            type: 'cross'
+                            animation: false,
+                            type: 'cross',
+                            lineStyle: {
+                                color: '#376df4',
+                                width: 2,
+                                opacity: 1
+                            }
                         }
                     },
-                    legend: {
-                        data: ['日K', 'MA5', 'MA10', 'MA20', 'MA30']
-                    },
+                    legend: {},
                     grid: {
                         left: '10%',
                         right: '10%',
@@ -36,119 +40,84 @@
                         data: [],
                         scale: true,
                         boundaryGap: false,
-                        axisLine: { onZero: false },
-                        splitLine: { show: false },
-                        splitNumber: 20,
+                        axisLine: {lineStyle: {color: '#8392A5'}},
                         min: 'dataMin',
                         max: 'dataMax'
                     },
                     yAxis: {
                         scale: true,
-                        splitArea: {
-                            show: true
-                        }
+                        position: 'right',
+                        axisLine: {lineStyle: {color: '#8392A5'}},
+                        splitLine: {show: false}
                     },
-                    dataZoom: [
-                        {
-                            type: 'inside',
-                            start: 30,
-                            end: 70
+                    //缩放控制
+                    dataZoom: [{
+                        textStyle: {
+                            color: '#8392A5'
                         },
-                        {
-                            show: true,
-                            type: 'slider',
-                            y: '90%',
-                            start: 0,
-                            end: 75
+                        handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+                        handleSize: '80%',
+                        dataBackground: {
+                            areaStyle: {
+                                color: '#8392A5'
+                            },
+                            lineStyle: {
+                                opacity: 0.8,
+                                color: '#8392A5'
+                            }
+                        },
+                        handleStyle: {
+                            color: '#fff',
+                            shadowBlur: 3,
+                            shadowColor: 'rgba(0, 0, 0, 0.6)',
+                            shadowOffsetX: 2,
+                            shadowOffsetY: 2
                         }
-                    ],
+                    }, {
+                        type: 'inside'
+                    }],
                     series: [
                         {
-                            name: '日K',
-                            type: 'k',
+                            name: '',
+                            type: 'candlestick',
                             data: [],
                             itemStyle: {
                                 normal: {
-                                    color: '#ec0000',
-                                    color0: '#00da3c',
-                                    borderColor: '#8A0000',
-                                    borderColor0: '#008F28'
+                                    color: '#ec5554',
+                                    color0: '#2fa59a',
+                                    borderColor: '#80343a',
+                                    borderColor0: '#1f5e5e'
                                 }
-                            },
-                            markPoint: {
-                                label: {
-                                    normal: {
-                                        formatter: function (param) {
-                                            return param != null ? Math.round(param.value) : ''
-                                        }
-                                    }
-                                },
-                                data: [
-                                    {
-                                        name: 'highest value',
-                                        type: 'max',
-                                        valueDim: 'highest'
-                                    },
-                                    {
-                                        name: 'lowest value',
-                                        type: 'min',
-                                        valueDim: 'lowest'
-                                    },
-                                    {
-                                        name: 'average value on close',
-                                        type: 'average',
-                                        valueDim: 'close'
-                                    }
-                                ],
-                                tooltip: {
-                                    formatter: function (param) {
-                                        return param.name + '<br>' + (param.data.coord || '')
-                                    }
-                                }
-                            },
-                            markLine: {
-                                symbol: ['none', 'none'],
-                                data: [
-                                    [
-                                        {
-                                            name: 'from lowest to highest',
-                                            type: 'min',
-                                            valueDim: 'lowest',
-                                            symbol: 'circle',
-                                            symbolSize: 10,
-                                            label: {
-                                                normal: { show: false },
-                                                emphasis: { show: false }
-                                            }
-                                        },
-                                        {
-                                            type: 'max',
-                                            valueDim: 'highest',
-                                            symbol: 'circle',
-                                            symbolSize: 10,
-                                            label: {
-                                                normal: { show: false },
-                                                emphasis: { show: false }
-                                            }
-                                        }
-                                    ]
-                                ]
                             }
                         }
                     ]
                 }
             }
         },
-        created () {
+        props: {
+            //父组件需要传递的参数：id，width，height，option
+            id: {
+                type: String
+            },
+            width: {
+                type: String,
+                default: "100%"
+            },
+            height: {
+                type: String,
+                default: "620px"
+            }
+        },
+        created() {
             // this.setEchartOption()
         },
-        mounted () {
+        mounted() {
             this.setEchartOption()
             this.myChart = echarts.init(document.getElementById('myChart'))
             this.myChart.setOption(this.echartsOption)
         },
         methods: {
-            setEchartOption () {
+            setEchartOption() {
                 // 数据意义：开盘(open)，收盘(close)，最低(lowest)，最高(highest)
                 this.resData = splitData([
                     ['2013/1/24', 2320.26, 2320.26, 2287.3, 2362.94],
@@ -242,17 +211,18 @@
                 ])
                 this.echartsOption.xAxis.data = this.resData.categoryData
                 this.echartsOption.series[0].data = this.resData.values
-                console.log(this.echartsOption.xAxis.data)
-                console.log(this.echartsOption.series[0].data)
+                // console.log(this.echartsOption.xAxis.data)
+                // console.log(this.echartsOption.series[0].data)
 
-                function splitData (rawData) {
+                function splitData(rawData) {
                     var categoryData = []
                     var values = []
                     for (var i = 0; i < rawData.length; i++) {
                         categoryData.push(rawData[i].splice(0, 1)[0])
                         values.push(rawData[i])
-                        console.log(categoryData)
-                        console.log(values)
+                        // console.log(categoryData)
+                        // console.log(values)
+                        console.log(123)
                     }
                     return {
                         categoryData: categoryData,
@@ -264,9 +234,9 @@
     }
 </script>
 <style scoped>
-    #myChart{
-        width: 70%;
-        height: 500px;
+    #myChart {
+        width: 100%;
+        height: 600px;
         margin: 0 auto;
     }
 

@@ -105,7 +105,7 @@ const canvasStar = class canvasStar {
                         dot.vy = dot.vy;
                     }
                     dot.x += dot.vx;      //x轴光点运行速度
-                    dot.y += dot.vy;      //y轴光点运行速度
+                    dot.y += dot.vy ;      //y轴光点运行速度
                 }
             }
 
